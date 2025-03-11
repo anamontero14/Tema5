@@ -34,13 +34,15 @@ public class Hora {
 	 * incrementa la hora en un minuto
 	 */
 	public void incremento() {
-		int increMin;
-
-		increMin = minuto++;
-
-		if (increMin >= 60) {
-			this.minuto = 0;
-			this.hora++;
+		if (minuto >= 59) {
+			minuto = 0;
+			if (hora == 23) {
+				hora = 0;
+			} else {
+				hora++;
+			}
+		} else {
+			minuto++;
 		}
 	}
 
@@ -85,14 +87,24 @@ public class Hora {
 	@Override
 	public String toString() {
 		String minutosCadena = "0";
+		String horasCadena = "0";
 
 		String devolver;
 
+		// si la hora es menos que 10 le pone un 0 delante
+		if (hora < 10) {
+			horasCadena += hora;
+			devolver = horasCadena + ":";
+		} else {
+			devolver = hora + ":";
+		}
+
+		// si los minutos son menos que les pone un 0 delante
 		if (minuto < 10) {
 			minutosCadena += minuto;
-			devolver = hora + ":" + minutosCadena;
+			devolver += minutosCadena;
 		} else {
-			devolver = hora + ":" + minuto;
+			devolver += minuto;
 		}
 
 		return devolver;

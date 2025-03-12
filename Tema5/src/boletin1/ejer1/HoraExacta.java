@@ -1,7 +1,7 @@
 package boletin1.ejer1;
 
 public class HoraExacta extends Hora {
-	int segundos;
+	private int segundos;
 
 	HoraExacta(int hora, int minuto, int segundos) {
 

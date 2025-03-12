@@ -5,12 +5,12 @@ public class Hora {
 	/**
 	 * Atributo que representa la hora
 	 */
-	int hora;
+	protected int hora;
 
 	/**
 	 * Atributo que representa los minutos
 	 */
-	int minuto;
+	protected int minuto;
 
 	/**
 	 * Construye un objeto con los datos pasados como parámetros. Comprueba que los

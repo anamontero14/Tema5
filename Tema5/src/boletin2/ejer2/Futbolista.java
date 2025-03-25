@@ -3,7 +3,7 @@ package boletin2.ejer2;
 /**
  * Clase que gestionará la a los futbolistas
  */
-public class Futbolista {
+public class Futbolista implements Comparable<Object>{
 
 	/**
 	 * Atributo privado que representará el nº del jugador
@@ -172,7 +172,7 @@ public class Futbolista {
 
 		if (this.numCamiseta > futb.numCamiseta) {
 			res = 1;
-		} else if (this.numCamiseta > futb.numCamiseta) {
+		} else if (this.numCamiseta < futb.numCamiseta) {
 			res = -1;
 		} else {
 			res = this.nombreJugador.compareTo(futb.nombreJugador);

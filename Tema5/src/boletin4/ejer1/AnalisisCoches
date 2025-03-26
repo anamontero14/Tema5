@@ -30,3 +30,5 @@ Camion extends Vehiculo
 Motocicleta extends Vehiculo
 	- cilindrada: int
 	- se requiere carnet: boolean
+	-------------------
+	+ comprobarCarnet()

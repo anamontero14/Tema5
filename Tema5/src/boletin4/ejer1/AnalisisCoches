@@ -1,0 +1,32 @@
+Vehiculo implements VehiculoInterfaz
+	- marca: String
+	- modelo: String
+	- color: String
+	- matricula: String
+	- velocidad: int
+	- marcha: int
+	- motor: boolean
+	-------------------
+	Vehiculo(matricula)
+	Vehiculo(marca, modelo, color, matricula)
+	+ parar()
+	+ arrancar()
+	+ subirMarcha()
+	+ bajarMarcha()
+	+ velocidadALlegar(velocidad)
+
+
+Turismo extends Vehiculo
+	- nº de plazas: int
+	- tipo de uso: Enum
+	-------------------
+	Turismo(matricula){super()}
+	Turismo(marca, modelo, color, matricula, nº de plazas, tipo de uso) {super()}
+
+Camion extends Vehiculo
+	- peso máximo: double
+	- transporta mercancia peligrosa: boolean
+
+Motocicleta extends Vehiculo
+	- cilindrada: int
+	- se requiere carnet: boolean

@@ -3,7 +3,7 @@ package boletin2.ejer2;
 /**
  * Clase que gestionará la a los futbolistas
  */
-public class Futbolista implements Comparable<Object>{
+public class Futbolista implements Comparable<Futbolista> {
 
 	/**
 	 * Atributo privado que representará el nº del jugador
@@ -162,20 +162,15 @@ public class Futbolista implements Comparable<Object>{
 	 * Método compareTo que compara dos objetos por el nº de camiseta y el nombre
 	 * 
 	 * @param obj - Objeto que entra por parámetro de entrada
-	 * @return un int. Si es 0 es que ha habido un error, si es -1 es porque son
-	 *         iguales y si es 1 es porque NO son iguales
+	 * @return un int. Si es 0 es que son iguales y si no es 0 pues no son iguales
 	 */
-	public int compareTo(Object obj) {
+	public int compareTo(Futbolista obj) {
 		int res = 0;
 
-		Futbolista futb = (Futbolista) obj;
+		res = this.numCamiseta - obj.numCamiseta;
 
-		if (this.numCamiseta > futb.numCamiseta) {
-			res = 1;
-		} else if (this.numCamiseta < futb.numCamiseta) {
-			res = -1;
-		} else {
-			res = this.nombreJugador.compareTo(futb.nombreJugador);
+		if (res == 0) {
+			res = this.nombreJugador.compareTo(obj.nombreJugador);
 		}
 
 		return res;

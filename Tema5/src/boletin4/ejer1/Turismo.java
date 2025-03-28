@@ -9,13 +9,8 @@ public class Turismo extends Vehiculo {
 
 	private int numPlaz;
 
-	Turismo(String matricula) {
-		super(matricula);
-	}
-
-	Turismo(String matricula, String marca, String modelo, String color, boolean motor, int marcha, int velocidad,
-			int numPlazas, String tipo) {
-		super(matricula, marca, modelo, color, motor, marcha, velocidad);
+	Turismo(String matricula, String marca, String modelo, String color, boolean motor, int numPlazas, String tipo) {
+		super(matricula, marca, modelo, color, motor);
 
 		if (numPlazas > 0) {
 			this.numPlaz = numPlazas;

@@ -1,6 +1,6 @@
 package boletin4.ejer1;
 
-public class Vehiculo{
+public class Vehiculo {
 
 	private String marca;
 	private String modelo;
@@ -8,16 +8,10 @@ public class Vehiculo{
 	private String matricula;
 
 	private boolean motor;
-	private int marcha;
-	private int velocidad;
+	private int marcha = 0;
+	private int velocidad = 0;
 
-	Vehiculo(String matricula) {
-		if (matricula != null && !matricula.isBlank()) {
-			this.matricula = matricula;
-		}
-	}
-
-	Vehiculo(String matricula, String marca, String modelo, String color, boolean motor, int marcha, int velocidad) {
+	Vehiculo(String matricula, String marca, String modelo, String color, boolean motor) {
 		if (matricula != null && !matricula.isBlank()) {
 			this.matricula = matricula;
 		}
@@ -36,14 +30,6 @@ public class Vehiculo{
 
 		if (motor == true || motor == false) {
 			this.motor = motor;
-		}
-
-		if (marcha <= 5) {
-			this.marcha = marcha;
-		}
-
-		if (velocidad >= 0) {
-			this.velocidad = velocidad;
 		}
 	}
 
@@ -79,10 +65,6 @@ public class Vehiculo{
 		return marcha;
 	}
 
-	public void setMarcha(int marcha) {
-		this.marcha = marcha;
-	}
-
 	public int getVelocidad() {
 		return velocidad;
 	}
@@ -103,38 +85,30 @@ public class Vehiculo{
 		marcha = 1;
 	}
 
-	public int subirMarcha() {
-		int marchaActual;
+	public void subirVelocidad(int velocidadDestino) {
 
-		marchaActual = marcha + 1;
-
-		if (marchaActual > 5) {
-			marchaActual = 5;
+		while (velocidad < velocidadDestino) {
+			velocidad++;
+			cambiarMarcha(velocidadDestino);
 		}
+	}
 
-		return marchaActual;
-	};
+	public void cambiarMarcha(int velocidadDestino) {
+		for (int i = velocidad; i <= velocidadDestino; i++) {
 
-	public int bajarMarcha() {
-		int marchaActual;
+			if (i >= 0 && i <= 30) {
+				marcha = 1;
+			} else if (i > 30 && i <= 50) {
+				marcha = 2;
+			} else if (i > 50 && i <= 70) {
+				marcha = 3;
+			} else if (i > 70 && i <= 100) {
+				marcha = 4;
+			} else {
+				marcha = 5;
+			}
 
-		marchaActual = marcha - 1;
-
-		if (marchaActual < 0) {
-			marchaActual = 0;
 		}
-
-		return marchaActual;
-	};
-
-	public int velocidadALlegar(int velocidad) {
-		int velocidadALlegar = 0;
-
-		if (velocidad >= 0) {
-			velocidadALlegar = velocidad;
-		}
-
-		return velocidadALlegar;
 	}
 
 }

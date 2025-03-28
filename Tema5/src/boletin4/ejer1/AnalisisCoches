@@ -7,7 +7,6 @@ Vehiculo implements VehiculoInterfaz
 	- marcha: int
 	- motor: boolean
 	-------------------
-	Vehiculo(matricula)
 	Vehiculo(marca, modelo, color, matricula)
 	+ parar()
 	+ arrancar()
@@ -17,8 +16,10 @@ Vehiculo implements VehiculoInterfaz
 
 
 Turismo extends Vehiculo
-	- nº de plazas: int
-	- tipo de uso: Enum
+	Enum TipoUso {PROFESIONAL, PARTICULAR}
+	
+	- numPlazas: int
+	- uso: TipoUso
 	-------------------
 	Turismo(matricula){super()}
 	Turismo(marca, modelo, color, matricula, nº de plazas, tipo de uso) {super()}
@@ -29,6 +30,5 @@ Camion extends Vehiculo
 
 Motocicleta extends Vehiculo
 	- cilindrada: int
-	- se requiere carnet: boolean
 	-------------------
 	+ comprobarCarnet()

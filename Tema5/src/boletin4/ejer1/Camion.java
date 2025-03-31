@@ -5,9 +5,8 @@ public class Camion extends Vehiculo {
 	private double pesoMax;
 	private boolean mercanciaPeligrosa;
 
-	Camion(String matricula, String marca, String modelo, String color, boolean motor, double pesoMax,
-			boolean mercanciaPeligrosa) {
-		super(matricula, marca, modelo, color, motor);
+	Camion(String matricula, String marca, String modelo, String color, double pesoMax, boolean mercanciaPeligrosa) {
+		super(matricula, marca, modelo, color);
 
 		if (pesoMax > 0) {
 			this.pesoMax = pesoMax;

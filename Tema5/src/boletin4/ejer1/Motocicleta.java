@@ -5,9 +5,8 @@ public class Motocicleta extends Vehiculo {
 	private int cilindrada;
 	private boolean carnet;
 
-	Motocicleta(String matricula, String marca, String modelo, String color, boolean motor, int marcha, int velocidad,
-			int cilindrada, boolean carnet) {
-		super(matricula, marca, modelo, color, motor);
+	Motocicleta(String matricula, String marca, String modelo, String color, int cilindrada, boolean carnet) {
+		super(matricula, marca, modelo, color);
 
 		if (cilindrada > 0) {
 			this.cilindrada = cilindrada;

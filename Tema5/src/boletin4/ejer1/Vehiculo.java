@@ -7,11 +7,11 @@ public class Vehiculo {
 	private String color;
 	private String matricula;
 
-	private boolean motor;
+	private boolean motor = false;
 	private int marcha = 0;
 	private int velocidad = 0;
 
-	Vehiculo(String matricula, String marca, String modelo, String color, boolean motor) {
+	Vehiculo(String matricula, String marca, String modelo, String color) {
 		if (matricula != null && !matricula.isBlank()) {
 			this.matricula = matricula;
 		}
@@ -26,10 +26,6 @@ public class Vehiculo {
 
 		if (color != null && !color.isBlank()) {
 			this.color = color;
-		}
-
-		if (motor == true || motor == false) {
-			this.motor = motor;
 		}
 	}
 
@@ -93,19 +89,32 @@ public class Vehiculo {
 		}
 	}
 
+	public void bajarVelocidad() {
+
+		while (velocidad >= 0) {
+			velocidad--;
+			cambiarMarcha(0);
+		}
+	}
+
 	public void cambiarMarcha(int velocidadDestino) {
 		for (int i = velocidad; i <= velocidadDestino; i++) {
 
 			if (i >= 0 && i <= 30) {
 				marcha = 1;
+				System.out.println("Se cambió a la marcha: " + marcha);
 			} else if (i > 30 && i <= 50) {
 				marcha = 2;
+				System.out.println("Se cambió a la marcha: " + marcha);
 			} else if (i > 50 && i <= 70) {
 				marcha = 3;
+				System.out.println("Se cambió a la marcha: " + marcha);
 			} else if (i > 70 && i <= 100) {
 				marcha = 4;
+				System.out.println("Se cambió a la marcha: " + marcha);
 			} else {
 				marcha = 5;
+				System.out.println("Se cambió a la marcha: " + marcha);
 			}
 
 		}

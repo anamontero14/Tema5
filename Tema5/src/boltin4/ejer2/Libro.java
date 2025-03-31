@@ -37,6 +37,7 @@ public class Libro extends Ficha {
 	 *         igual a 15 días y por ende se puede prestar o false si el tiempo a
 	 *         prestar excede los 15 días
 	 */
+	@Override
 	public boolean prestar(int tiempoAPrestar) {
 
 		boolean sePresta = false;

@@ -1,0 +1,61 @@
+class abstract Ficha
+	private int num;
+	private String titulo;
+	
+	Ficha(int num, String titulo){};
+	
+	public getNum(){};
+	public getTitulo(){};
+	
+	public abstract prestar(){};
+	
+class Libro extends Ficha
+	private String autor;
+	private String editorial;
+	
+	Libro(int num, String titulo, String autor, String editorial){
+	super(num, titulo);
+	};
+	
+	public getAutor(){};
+	public getEditorial(){};
+	public setEditorial(){};
+	------------------------
+	HEREDADOS:
+	
+	public prestar(){};
+
+class Revista extends Ficha
+	private int numRevista;
+	private int añoPublicacion;
+	
+	Revista(int num, String titulo, int numRevista, int añoPublicacion){
+	super(num, titulo);
+	};
+	
+	public getNumRevista(){};
+	public getAñoPublicacion(){};
+	------------------------
+	HEREDADOS:
+	
+	public prestar(){};
+
+class Dvd extends Ficha
+	enum Tipo {PELICULA, DOCUMENTAL, SERIE};
+	
+	private String director;
+	private int año;
+	private Tipo tipoDvd = Tipo.PELICULA;
+	
+	Dvd(int num, String titulo, String director, int año, String tipoDvd){
+	super(num, titulo);
+	};
+	
+	public String getDirector(){};
+	public int getAño(){};
+	public String getTipoDvd(){};
+	------------------------
+	HEREDADOS:
+	
+	public prestar(){};
+	

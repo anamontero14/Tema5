@@ -1,0 +1,29 @@
+class CuentaBancaria
+
+	private int numCuenta;
+	private int saldo;
+	
+	public void ingresar(){};
+	public void retirar(){};
+
+class Titular
+	
+	private String dni;
+	private String nombre;
+	private String apellido;
+	private int telefono;
+
+	public void añadir(){};
+	public void borrar(){};
+	
+
+class CuentaAhorro extends CuentaBancaria
+	
+	private int cuotaMantenimiento;
+	private int interesAnual;
+	
+	public void saldoMasInteres(){};
+	public void saldoMenosCuota(){};
+	
+
+class CuentaCorriente extends CuentaBancaria

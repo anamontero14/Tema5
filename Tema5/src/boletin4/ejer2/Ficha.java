@@ -1,4 +1,4 @@
-package boltin4.ejer2;
+package boletin4.ejer2;
 
 /**
  * Clase abstracta que gestiona los objetos de una libreria

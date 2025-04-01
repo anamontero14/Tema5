@@ -1,0 +1,20 @@
+class Contacto
+	
+	private String nombre;
+	private int telefono;
+	
+	Contacto(String nombre, int telefono)
+	
+	public boolean equals(){};
+	
+class Persona extends Contacto
+
+	private String cumpleaños;
+	
+	Persona(String nombre, int telefono, String cumpleaños)
+
+class Empresa extends Contacto
+
+	private String paginaWeb;
+	
+	Empresa(String nombre, int telefono, String paginaWeb)

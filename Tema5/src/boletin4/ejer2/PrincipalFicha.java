@@ -1,4 +1,4 @@
-package boltin4.ejer2;
+package boletin4.ejer2;
 
 import java.util.Scanner;
 

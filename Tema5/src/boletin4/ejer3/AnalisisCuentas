@@ -1,29 +1,39 @@
 class CuentaBancaria
 
 	private int numCuenta;
-	private int saldo;
+	private double saldo;
+	private TreeSet<Titular> (mín: 1, máx: 3)
 	
 	public void ingresar(){};
 	public void retirar(){};
+	public void añadirTitular(){};
+	public void eliminarTitular(){};
 
 class Titular
 	
 	private String dni;
 	private String nombre;
 	private String apellido;
-	private int telefono;
-
-	public void añadir(){};
-	public void borrar(){};
-	
+	private long telefono;
 
 class CuentaAhorro extends CuentaBancaria
 	
-	private int cuotaMantenimiento;
-	private int interesAnual;
+	private double cuotaMantenimiento;
+	private double interesAnual;
 	
-	public void saldoMasInteres(){};
-	public void saldoMenosCuota(){};
-	
+	public realizarTransaccion(Transaccion t){};	
 
 class CuentaCorriente extends CuentaBancaria
+	
+	private List<Transaccion> transaccion;
+	private double porcentaje;
+	
+class Transaccion
+
+	private int dia;
+	private int mes;
+	private int año;
+	private String concepto;
+	private int importe;
+	
+	Transaccion(int dia, int mes, int año, String concepto, int importe)

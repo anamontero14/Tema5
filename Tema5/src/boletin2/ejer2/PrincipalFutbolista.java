@@ -37,6 +37,16 @@ public class PrincipalFutbolista {
 			System.out.println(resultado);
 			System.out.println();
 		}
+		
+		System.out.println("ORDENAR\n------------------------");
+		
+		// ordenar por edad
+		Arrays.sort(tablaDeSocios, new OrdenarEdadAscendente());
+		System.out.println(Arrays.toString(tablaDeSocios));
+		
+		//ordenar por goles
+		Arrays.sort(tablaDeSocios, new OrdenarPorGoles());
+		System.out.println(Arrays.toString(tablaDeSocios));
 
 	}
 

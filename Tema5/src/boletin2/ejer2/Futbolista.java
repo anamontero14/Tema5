@@ -3,7 +3,7 @@ package boletin2.ejer2;
 /**
  * Clase que gestionará la a los futbolistas
  */
-public class Futbolista implements Comparable<Futbolista> {
+public class Futbolista extends OrdenarEdadAscendente implements Comparable<Futbolista> {
 
 	/**
 	 * Atributo privado que representará el nº del jugador

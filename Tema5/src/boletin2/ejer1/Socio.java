@@ -3,7 +3,7 @@ package boletin2.ejer1;
 /**
  * Clase que maneja a un socio
  */
-public class Socio implements Comparable<Socio> {
+public class Socio extends OrdenNombreSocio implements Comparable<Socio> {
 
 	/**
 	 * Número identificativo del socio
@@ -41,6 +41,30 @@ public class Socio implements Comparable<Socio> {
 		}
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
 	/**
 	 * Método que representa el socio en forma de cadena
 	 */
@@ -50,19 +74,8 @@ public class Socio implements Comparable<Socio> {
 	}
 
 	/**
-	 * Método compareTo para comparar dos objetos
+	 * Método compareTo para ordenar los objetos
 	 */
-
-	/*
-	 * public int compareTo(Object o) { int res = 0;
-	 * 
-	 * Socio soc = (Socio) o;
-	 * 
-	 * if (this.id < soc.id) { res = -1; } else if (this.id > soc.id) { res = 1; }
-	 * 
-	 * return res; }
-	 */
-
 	@Override
 	public int compareTo(Socio o) {
 		int res = 0;

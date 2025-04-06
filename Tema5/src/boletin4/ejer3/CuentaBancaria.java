@@ -2,7 +2,7 @@ package boletin4.ejer3;
 
 import java.util.TreeSet;
 
-public class CuentaBancaria {
+public class CuentaBancaria implements Comparable<CuentaBancaria> {
 
 	private String numCuenta;
 	private double saldo;
@@ -98,6 +98,12 @@ public class CuentaBancaria {
 
 		return sePuede;
 
+	}
+
+	@Override
+	public int compareTo(CuentaBancaria o) {
+
+		return this.numCuenta.compareTo(o.numCuenta);
 	}
 
 }

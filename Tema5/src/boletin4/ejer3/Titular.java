@@ -1,6 +1,6 @@
 package boletin4.ejer3;
 
-public class Titular {
+public class Titular implements Comparable<Titular> {
 
 	private String dni;
 	private String nombre;
@@ -51,6 +51,12 @@ public class Titular {
 
 	public void setTelefono(long telefono) {
 		this.telefono = telefono;
+	}
+
+	@Override
+	public int compareTo(Titular o) {
+
+		return this.dni.compareTo(o.dni);
 	}
 
 }

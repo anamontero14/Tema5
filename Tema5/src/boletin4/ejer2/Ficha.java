@@ -3,7 +3,7 @@ package boletin4.ejer2;
 /**
  * Clase abstracta que gestiona los objetos de una libreria
  */
-public abstract class Ficha {
+public abstract class Ficha implements Comparable<Ficha> {
 
 	/**
 	 * Atributo que almacena el nº del objeto
@@ -44,5 +44,19 @@ public abstract class Ficha {
 	 * o un dvd
 	 */
 	public abstract boolean prestar(int tiempoAPrestar);
+
+	@Override
+	public int compareTo(Ficha o) {
+		// resultado de la comparación
+		int res = 0;
+
+		Ficha ficha = o;
+
+		if (this.num < ficha.num) {
+			res = 1;
+		}
+
+		return res;
+	}
 
 }

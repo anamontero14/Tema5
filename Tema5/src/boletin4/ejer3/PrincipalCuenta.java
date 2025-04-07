@@ -82,22 +82,36 @@ public class PrincipalCuenta {
 		double cuotaMantenimiento;
 		double interesAnual;
 
-		System.out.print("Número de cuenta: ");
-		numCuenta = leer.nextLine();
-
-		System.out.print("Saldo de la cuenta: ");
-		saldo = leer.nextDouble();
+		boolean salir = false;
 
 		switch (tipoCuenta) {
 		case "CORRIENTE" -> {
-			System.out.print("Porcentaje cobrado por transacción: ");
-			porcentaje = leer.nextDouble();
-			// limpiar buffer
-			leer.nextLine();
+			do {
+				System.out.print("Número de cuenta: ");
+				numCuenta = leer.nextLine();
+				System.out.print("Saldo de la cuenta: ");
+				saldo = leer.nextDouble();
+				System.out.print("Porcentaje cobrado por transacción: ");
+				porcentaje = leer.nextDouble();
+				// limpiar buffer
+				leer.nextLine();
 
-			cuenta2 = new CuentaCorriente(numCuenta, saldo, porcentaje);
+				try {
+					cuenta2 = new CuentaCorriente(numCuenta, saldo, porcentaje);
+					salir = true;
+				} catch (SaldoExcepcion e) {
+					System.err.println(e.toString());
+				}
+
+			} while (!salir);
+
 		}
 		case "AHORRO" -> {
+			System.out.print("Número de cuenta: ");
+			numCuenta = leer.nextLine();
+
+			System.out.print("Saldo de la cuenta: ");
+			saldo = leer.nextDouble();
 			System.out.print("Cuota por el mantenimiento: ");
 			cuotaMantenimiento = leer.nextDouble();
 			// limpiar buffer
@@ -106,7 +120,11 @@ public class PrincipalCuenta {
 			System.out.println("Interés anual: ");
 			interesAnual = leer.nextDouble();
 
-			cuenta2 = new CuentaAhorro(numCuenta, saldo, cuotaMantenimiento, interesAnual);
+			try {
+				cuenta2 = new CuentaAhorro(numCuenta, saldo, cuotaMantenimiento, interesAnual);
+			} catch (SaldoExcepcion e) {
+				System.err.println(e.toString());
+			}
 		}
 		}
 
@@ -119,20 +137,29 @@ public class PrincipalCuenta {
 		String nombre;
 		String apellido;
 		long telefono;
+		boolean salir = false;
 
 		// objeto del titular
 		Titular titular = null;
 
-		System.out.print("DNI del titular: ");
-		dni = leer.nextLine();
-		System.out.print("Nombre del titular: ");
-		nombre = leer.nextLine();
-		System.out.print("Apellido del titular: ");
-		apellido = leer.nextLine();
-		System.out.print("Teléfono del titular: ");
-		telefono = leer.nextLong();
+		do {
+			System.out.print("DNI del titular: ");
+			dni = leer.nextLine();
+			System.out.print("Nombre del titular: ");
+			nombre = leer.nextLine();
+			System.out.print("Apellido del titular: ");
+			apellido = leer.nextLine();
+			System.out.print("Teléfono del titular: ");
+			telefono = leer.nextLong();
 
-		titular = new Titular(dni, nombre, apellido, telefono);
+			try {
+				titular = new Titular(dni, nombre, apellido, telefono);
+			} catch (DniExcepcion e) {
+				System.err.println(e.toString());
+			} catch (NombreExcepcion e) {
+				System.err.println(e.toString());
+			}
+		} while (!salir);
 
 		return titular;
 	}

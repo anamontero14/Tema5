@@ -7,13 +7,17 @@ public class Titular implements Comparable<Titular> {
 	private String apellido;
 	private long telefono;
 
-	Titular(String dni, String nombre, String apellido, long telefono) {
+	Titular(String dni, String nombre, String apellido, long telefono) throws DniExcepcion, NombreExcepcion {
 		if (dni != null && !dni.isBlank()) {
 			this.dni = dni;
+		} else {
+			throw new DniExcepcion();
 		}
 
 		if (nombre != null && !nombre.isBlank()) {
 			this.nombre = nombre;
+		} else {
+			throw new NombreExcepcion();
 		}
 
 		if (apellido != null && !apellido.isBlank()) {

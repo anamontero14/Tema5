@@ -8,7 +8,8 @@ public class CuentaCorriente extends CuentaBancaria {
 
 	private double porcentaje;
 
-	CuentaCorriente(String numCuenta, double saldo, double porcentaje) {
+	CuentaCorriente(String numCuenta, double saldo, double porcentaje)
+			throws SaldoExcepcion {
 		super(numCuenta, saldo);
 
 		if (porcentaje >= 0) {

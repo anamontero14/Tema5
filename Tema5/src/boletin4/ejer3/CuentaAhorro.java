@@ -8,7 +8,7 @@ public class CuentaAhorro extends CuentaBancaria {
 	private double cuotaMantenimiento;
 	private double interesAnual;
 
-	CuentaAhorro(String numCuenta, double saldo, double cuotaMantenimiento, double interesAnual) {
+	CuentaAhorro(String numCuenta, double saldo, double cuotaMantenimiento, double interesAnual) throws SaldoExcepcion {
 		super(numCuenta, saldo);
 
 		if (cuotaMantenimiento >= 0) {

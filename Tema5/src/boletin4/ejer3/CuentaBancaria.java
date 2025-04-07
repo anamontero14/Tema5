@@ -15,9 +15,11 @@ public class CuentaBancaria implements Comparable<CuentaBancaria> {
 		}
 	}
 
-	public CuentaBancaria(String numCuenta, double saldo) {
+	public CuentaBancaria(String numCuenta, double saldo) throws SaldoExcepcion {
 		if (saldo >= 0) {
 			this.saldo = saldo;
+		} else {
+			throw new SaldoExcepcion();
 		}
 
 		if (numCuenta != null && !numCuenta.isBlank()) {

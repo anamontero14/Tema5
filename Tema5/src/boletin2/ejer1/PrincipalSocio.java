@@ -32,11 +32,17 @@ public class PrincipalSocio {
 		System.out.println(Arrays.deepToString(soc));
 
 		// ordenar por los nombres
-		Arrays.sort(soc, new OrdenNombreSocio());
+		Arrays.sort(soc, (o1, o2) -> {
+			return o1.getNombre().compareTo(o2.getNombre());
+		});
+
 		System.out.println(Arrays.toString(soc));
 
 		// ordenar por edad
-		Arrays.sort(soc, new OrdenEdadSocio());
+		Arrays.sort(soc, (o1, o2) -> {
+			return o2.getEdad() - o1.getEdad();
+		});
+
 		System.out.println(Arrays.toString(soc));
 	}
 

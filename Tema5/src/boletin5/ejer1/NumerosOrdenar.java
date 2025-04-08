@@ -3,7 +3,7 @@ package boletin5.ejer1;
 import java.util.Arrays;
 import java.util.Random;
 
-public class NumerosOrdenar extends OrdenarNumeros {
+public class NumerosOrdenar {
 
 	public static void main(String[] args) {
 
@@ -20,8 +20,10 @@ public class NumerosOrdenar extends OrdenarNumeros {
 		// mostrar la lista
 		System.out.println(Arrays.toString(listaNumeros));
 
-		// ordenarla dependiendo de lo que se haya especificado en ordenar numeros
-		Arrays.sort(listaNumeros, new OrdenarNumeros());
+		// ordenar con expresiones lambda
+		Arrays.sort(listaNumeros, (o1, o2) -> {
+			return o2 - o1;
+		});
 		System.out.println();
 		// mostrar la lista ordenada
 		System.out.println(Arrays.toString(listaNumeros));

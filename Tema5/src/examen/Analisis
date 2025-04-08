@@ -1,0 +1,64 @@
+class MandoADistancia implements Comparable
+	private String modelo;
+	private double altura;
+	private double precio;
+	private boolean botonEncendido;
+	
+	public MandoADistancia(String modelo, double altura, double precio, boolean botonEncendido);
+	
+	public void encenderMando;
+	public void apagarMando;
+	
+	public boolean equals; //iguales si tienen el mismo modelo
+	public int compareTo; //por orden alfabetico del modelo
+	
+	public String toString;
+	
+interface Volumen
+	
+	public void subirVolumen;
+	public void bajarVolumen;
+	
+class MandoTelevision extends MandoADistancia implements Volumen
+	
+	private int volumen;
+	private int canal;
+	
+	public void subirVolumen;
+	public void bajarVolumen;
+	public void cambiarCanal;
+	
+	public String toString;
+	
+class MandosMinicadenas extends MandoADistancia implements Volumen
+	
+	private int volumen;
+	
+	public void subirVolumen;
+	public void bajarVolumen;
+	
+	public String toString;
+
+interface Velocidad
+	
+	public void subirVelocidad;
+	public void bajarVelocidad;
+
+class MandoAspiradora extends MandoADistancia implements Velocidad
+
+	private int velocidadAspiracion = 0; //valor maximo 3
+	
+	public void subirVelocidad;
+	public void bajarVelocidad;
+	
+	public String toString;
+	
+class MandoAcondicionado extends MandoADistancia implements Velocidad
+	
+	Enum ModoAire {FRIO, CALOR};
+	
+	private String modo = ModoAire.FRIO;
+	private int velocidad = 0;
+	private int temperatura;
+	
+	public String toString;

@@ -1,0 +1,124 @@
+interface Volumen
+	
+	+ void subirVolumen()
+	+ void bajarVolumen()
+	
+interfaz Velocidad
+	
+	+ void subirVelocidad()
+	+ void bajarVelocidad()
+	
+class ModeloNombreException extends Exception
+	
+	+ String toString()
+	+ String getMessage()
+
+class Mando implements Comparable
+
+	----------------ATRIBUTOS
+	- String modelo
+	- double anchura
+	- double altura
+	- double precio
+	- boolean encendidoApagado = false
+	
+	----------------CONSTRUCTOR
+	+ Mando(String modelo, double anchura, double altura, double precio)
+	
+	----------------GETTERS & SETTERS
+	+ getModelo
+	+ setModelo
+	+ getAnchura
+	+ getAltura
+	+ getPrecio
+	+ setPrecio
+	+ isEncendidoApagado
+	
+	----------------MÉTODOS
+	+ void onOff()
+	+ boolean equals()
+	+ String toString()
+	+ int compareTo()
+	
+class MandoTelevision extends Mando implements Volumen
+
+	----------------ATRIBUTOS
+	- int volumen = 0
+	- int canal = 1
+	
+	----------------CONSTRUCTOR
+	+ MandoTelevision(String modelo, double anchura, double altura, double precio) {
+	super();
+	}
+	
+	----------------GETTERS & SETTERS
+	+ getVolumen
+	+ getCanal
+	
+	----------------MÉTODOS
+	+ void cambiarCanal()
+	+ void subirVolumen()
+	+ void bajarVolumen()
+	+ String toString()
+	
+class MandoMinicadena extends Mando implements Volumen
+	
+	----------------ATRIBUTOS
+	- int volumen = 0
+	
+	----------------CONSTRUCTOR
+	+ MandoMinicadena(String modelo, double anchura, double altura, double precio) {
+	super();
+	}
+	
+	----------------GETTERS & SETTERS
+	+ getVolumen
+	
+	----------------METODOS
+	+ void subirVolumen()
+	+ void bajarVolumen()
+	+ String toString()
+
+class MandoAspiradora extends Mando implements Velocidad
+	
+	----------------ATRIBUTOS
+	- int velocidad = 0
+	
+	----------------CONSTRUCTOR
+	+ MandoAspiradora(String modelo, double anchura, double altura, double precio) {
+	super();
+	}
+	
+	----------------GETTERS & SETTERS
+	+ getVelocidad
+	
+	----------------METODOS
+	+ void subirVelocidad
+	+ void bajarVelocidad
+	+ String toString()
+
+class MandoAireAcondicionado extends Mando implements Velocidad
+	
+	----------------ATRIBUTOS
+	# enum Modo {FRIO, CALIENTE}
+	- Modo modoAire = Modo.FRIO
+	- int temperatura = 20
+	- int velocidad = 0
+	
+	----------------CONSTRUCTOR
+	+ MandoAspiradora(String modelo, double anchura, double altura, double precio) {
+	super();
+	}	
+		
+	----------------GETTERS & SETTERS
+	+ getModoAire
+	+ setModoAire
+	+ getTemperatura
+	+ setTemperatura
+	+ getVelocidad
+	
+	----------------METODOS
+	+ void subirVelocidad
+	+ void bajarVelocidad
+	+ String toString()
+	
